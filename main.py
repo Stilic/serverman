@@ -33,7 +33,7 @@ class httpHandler(BaseHTTPRequestHandler):
         self.end_headers()
         if errorCode == 404:
             self.wfile.write(
-                bytes(jinja.get_template("error.html").render(name=conf.name, conf.version=conf.version, code=errorCode), "utf-8"))
+                bytes(jinja.get_template("error.html").render(name=conf.name, version=conf.version, code=errorCode), "utf-8"))
         elif detect(open(filePath, "rb").read(1024)) == False:
             with open(filePath, "r") as file:
                 self.wfile.write(bytes(file.read(), "utf-8"))
