@@ -9,7 +9,6 @@ jinja = Environment(
     autoescape=select_autoescape()
 )
 
- = "1.0.0"
 print(conf.name + " " + conf.version)
 
 
